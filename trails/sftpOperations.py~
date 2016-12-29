@@ -1,0 +1,28 @@
+import paramiko
+import os
+
+class sftpOperations:
+  private_key='/home/bosch/Desktop/pythonvideocapture/unencrypted_openssh.pem'  
+  privkey = paramiko.RSAKey.from_private_key_file(private_key)
+  host = '52.6.132.169' # remote hostname where SSH server is running
+  port = 22
+  user_name = 'ubuntu'
+  ssh = paramiko.SSHClient()
+  ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+  sftp
+
+  @staticmethod	
+  def connectToSftp():
+	sftpOperations.ssh.connect(host, username=user_name, pkey=privkey )
+  
+  @staticmethod	
+  def pushToServer(fileName):
+	sftpOperations.sftp = sftpOperations.ssh.open_sftp()
+	filepath = '/home/ubuntu/test/'+fileName
+	localpath = '/home/bosch/Desktop/pythonvideocapture/'+fileName
+	sftpOperations.sftp.put(localpath,filepath)
+
+  @staticmethod	
+  def closeConnection():
+	sftp.close()
+	ssh.close()

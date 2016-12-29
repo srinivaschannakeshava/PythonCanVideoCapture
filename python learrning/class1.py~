@@ -1,0 +1,7 @@
+import Employee
+
+class class1:
+
+  def changeStatus():
+	Employee.Employee.setStatus(not Employee.Employee.getStatus())
+

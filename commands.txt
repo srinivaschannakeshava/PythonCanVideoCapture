@@ -1,0 +1,13 @@
+- compression using avconv
+avconv -i blah_in.avi -s 640x360 -pass 1 blah.avi
+
+-- uvcvideo config
+
+sudo rmmode uvcvideo
+sudo modprobe uvcvideo nodrop=1 timeout=5000 quirk=0x80 
+
+-- socket-can config
+
+sudo ip link set can0 type can bitrate 500000
+
+sudo ip link set can0 up

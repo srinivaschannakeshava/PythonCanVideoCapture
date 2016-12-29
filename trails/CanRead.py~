@@ -1,0 +1,9 @@
+class CanRead:
+  
+  eventStatus=False
+  
+  def getCanEventStatus():
+	return Canread.eventStatus
+  
+  def setCanEventStatus(status):
+	CanRead.eventStatus=status
